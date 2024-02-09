@@ -1,15 +1,19 @@
-function appendToDisplay(value) {
-  document.getElementById('display').value += value;
+// Determines button clicked via id
+function myFunction(id) {
+  document.calc.result.value+=id;
 }
 
-function clearDisplay() {
-  document.getElementById('display').value = '';
+// Clears calculator input screen
+function clearScreen() {
+  document.calc.result.value="";
 }
 
+// Calculates input values
 function calculate() {
   try {
-      document.getElementById('display').value = eval(document.getElementById('display').value);
-  } catch (error) {
-      document.getElementById('display').value = 'Error';
-  }
+    var input = eval(document.calc.result.value);
+    document.calc.result.value=input;
+  } catch(err){
+      document.calc.result.value="Error";
+    }
 }
